@@ -1,4 +1,4 @@
-% Created 2021-07-20 Tue 23:57
+% Created 2021-07-21 Wed 00:01
 % Intended LaTeX compiler: xelatex
 \documentclass[9pt]{report}
 \usepackage{graphicx}
@@ -58,10 +58,10 @@
 
 
 \chapter{Installation}
-\label{sec:orga009362}
+\label{sec:orgc8be7c5}
 
 \section{Basic}
-\label{sec:orga0ea0cc}
+\label{sec:orgbf45d08}
 Use MS Windows 10.
 
 \begin{enumerate}
@@ -69,7 +69,7 @@ Use MS Windows 10.
 \begin{enumerate}
 \item Go to \uline{\url{https://www.ghostscript.com/download/gsdnld.html}}.
 \item Download the file \textbf{Ghostscript 9.54.0 for Windows (64 bit)} with
-the AGPL license (first column). \uline{Do not use the 32 bit
+the AGPL license. \uline{Do not use the 32 bit
 version, it is incompatible with \texttt{yhpdf}.}
 \item Run the installer with the standard steps, and click \texttt{Finish}
 once done. It should launch a website, telling you Ghostscript
@@ -96,11 +96,11 @@ can't resolve, report it to the package maintainer.
 \end{enumerate}
 
 \section{Advanced}
-\label{sec:org2a31a6c}
+\label{sec:orgb190af2}
 WIP.
 
 \chapter{Usage}
-\label{sec:org9a3fca3}
+\label{sec:org0e5cda1}
 
 Usage is intuitive:
 
@@ -131,9 +131,9 @@ output folder.
 
 
 \chapter{Technical Description}
-\label{sec:org6bfdcdc}
+\label{sec:orga342484}
 \section{What?}
-\label{sec:org10428d7}
+\label{sec:org098eda3}
 \texttt{yhpdf} is a GUI tool which:
 \begin{itemize}
 \item Takes an input PDF file.
@@ -146,7 +146,7 @@ support is MS Windows 10 (compiled binary provided). Other operating
 systems may be supported on a per-case basis.
 
 \section{How?}
-\label{sec:org3da0cbf}
+\label{sec:orgc39e51d}
 \texttt{yhpdf} uses PyPDF2 to split the PDF page-wise, then uses
 Ghostscript's compression on each of these pages. If the file size
 is greater than 195KB, it first tries \texttt{-dPDFSETTINGS=/ebook}. If
@@ -160,7 +160,7 @@ Python, you can probably get \texttt{yhpdf.py} running in your own
 environment by installing all dependencies.
 
 \section{Known Issues}
-\label{sec:org88fa60c}
+\label{sec:org9ea40be}
 \texttt{yhpdf} is a quickly written program, and will \textbf{not} win any
 software engineering competitions. It's meant to do one very
 specific job well. Thus, it has many unhandled exceptions, an ugly
@@ -180,7 +180,7 @@ get Python and install dependencies (needless to say: advanced
 users \emph{only}).
 
 \chapter{\texttt{yhpdf.py} Source}
-\label{sec:org4524815}
+\label{sec:org873c870}
 
 \begin{minted}[]{python}
 import tkinter as tk
