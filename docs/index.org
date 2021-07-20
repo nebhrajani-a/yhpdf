@@ -50,7 +50,7 @@
       B. Copy =yhpdf= from your =Downloads= folder and paste it in
          =C:\Program Files= (This PC $\rightarrow$ Local Disk
          $\rightarrow$ Program Files).
-      C. Double click on =yhpdf=. _Wait for 10 seconds_. If it doesn't
+      C. Double click on =yhpdf=. _Wait for 20 seconds_. If it doesn't
          launch, double click again, and wait for 10 more seconds. On
          old machines, =yhpdf= takes time to start up. Be patient, it
          runs much faster than it starts.

@@ -1,4 +1,4 @@
-% Created 2021-07-21 Wed 00:01
+% Created 2021-07-21 Wed 00:05
 % Intended LaTeX compiler: xelatex
 \documentclass[9pt]{report}
 \usepackage{graphicx}
@@ -58,10 +58,10 @@
 
 
 \chapter{Installation}
-\label{sec:orgc8be7c5}
+\label{sec:org1ce4f48}
 
 \section{Basic}
-\label{sec:orgbf45d08}
+\label{sec:orga7fe08e}
 Use MS Windows 10.
 
 \begin{enumerate}
@@ -82,7 +82,7 @@ is installed.
 \item Copy \texttt{yhpdf} from your \texttt{Downloads} folder and paste it in
 \texttt{C:\textbackslash{}Program Files} (This PC \(\rightarrow\) Local Disk
 \(\rightarrow\) Program Files).
-\item Double click on \texttt{yhpdf}. \uline{Wait for 10 seconds}. If it doesn't
+\item Double click on \texttt{yhpdf}. \uline{Wait for 20 seconds}. If it doesn't
 launch, double click again, and wait for 10 more seconds. On
 old machines, \texttt{yhpdf} takes time to start up. Be patient, it
 runs much faster than it starts.
@@ -96,11 +96,11 @@ can't resolve, report it to the package maintainer.
 \end{enumerate}
 
 \section{Advanced}
-\label{sec:orgb190af2}
+\label{sec:org6599515}
 WIP.
 
 \chapter{Usage}
-\label{sec:org0e5cda1}
+\label{sec:orge24fee2}
 
 Usage is intuitive:
 
@@ -131,9 +131,9 @@ output folder.
 
 
 \chapter{Technical Description}
-\label{sec:orga342484}
+\label{sec:org966b341}
 \section{What?}
-\label{sec:org098eda3}
+\label{sec:org766ef3a}
 \texttt{yhpdf} is a GUI tool which:
 \begin{itemize}
 \item Takes an input PDF file.
@@ -146,7 +146,7 @@ support is MS Windows 10 (compiled binary provided). Other operating
 systems may be supported on a per-case basis.
 
 \section{How?}
-\label{sec:orgc39e51d}
+\label{sec:org1febe05}
 \texttt{yhpdf} uses PyPDF2 to split the PDF page-wise, then uses
 Ghostscript's compression on each of these pages. If the file size
 is greater than 195KB, it first tries \texttt{-dPDFSETTINGS=/ebook}. If
@@ -160,7 +160,7 @@ Python, you can probably get \texttt{yhpdf.py} running in your own
 environment by installing all dependencies.
 
 \section{Known Issues}
-\label{sec:org9ea40be}
+\label{sec:orge84bd71}
 \texttt{yhpdf} is a quickly written program, and will \textbf{not} win any
 software engineering competitions. It's meant to do one very
 specific job well. Thus, it has many unhandled exceptions, an ugly
@@ -180,7 +180,7 @@ get Python and install dependencies (needless to say: advanced
 users \emph{only}).
 
 \chapter{\texttt{yhpdf.py} Source}
-\label{sec:org873c870}
+\label{sec:org6499695}
 
 \begin{minted}[]{python}
 import tkinter as tk
