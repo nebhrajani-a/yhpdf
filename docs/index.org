@@ -46,8 +46,8 @@
          is installed.
    2. Get *yhpdf*:
       A. Download =yhpdf.exe= from
-         _[[https://github.com/nebhrajani-a/yhpdf/blob/master/yhpdf.exe]]_.
-         Your browser may call it "Dangerous" since it's not a
+         _[[https://nebhrajani-a.github.io/yhpdf/yhpdf.exe]]_. Your
+         browser may call it "Dangerous" since it's not a
          Microsoft-verified program. Click the arrow for options and
          select "Keep".
       B. Copy =yhpdf= from your =Downloads= folder and paste it in
