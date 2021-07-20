@@ -54,10 +54,11 @@
          launch, double click again, and wait for 10 more seconds. On
          old machines, =yhpdf= takes time to start up. Be patient, it
          runs much faster than it starts.
-      D. Once it starts, you should see a windows with four buttons and
+      D. Once it starts, you should see a window with four buttons and
          some text. Go down to the taskbar, right click on =yhpdf='s
          feather icon, and select "Pin to taskbar".
-      E. If =yhpdf= doesn't start and reports an error, make sure
+      E. =yhpdf= is now ready for use.
+      F. If =yhpdf= doesn't start and reports an error, make sure
          Ghostscript is installed. If there's some other error you
          can't resolve, report it to the package maintainer.
 
