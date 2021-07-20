@@ -92,8 +92,7 @@
         complete.
      2. Once the PDF process is complete, a popup will ask you if you
         want to view the output files. Click "Yes".
-  4. Process as many files as you want to by selecting them and the
-     output folder.
+  4. Repeat steps 1 to 3 for as many PDFs as required.
   5. Click "Exit" when you're done.
 
 
