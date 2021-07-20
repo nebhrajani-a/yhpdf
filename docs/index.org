@@ -53,10 +53,14 @@
       B. Copy =yhpdf= from your =Downloads= folder and paste it in
          =C:\Program Files= (This PC $\rightarrow$ Local Disk
          $\rightarrow$ Program Files).
-      C. Double click on =yhpdf=. _Wait for 20 seconds_. If it doesn't
-         launch, double click again, and wait for 10 more seconds. On
-         old machines, =yhpdf= takes time to start up. Be patient, it
-         runs much faster than it starts.
+      C. Double click on =yhpdf=.
+         A. If "Windows protected your PC" launches, click "More
+            info", then select "Run anyway" on the bottom right.
+            Windows will remember your preference.
+         B. _Wait for 20 seconds_. If it doesn't
+            launch, double click again, and wait for 10 more seconds. On
+            old machines, =yhpdf= takes time to start up. Be patient, it
+            runs much faster than it starts.
       D. Once it starts, you should see a window with four buttons and
          some text. Go down to the taskbar, right click on =yhpdf='s
          feather icon, and select "Pin to taskbar".
