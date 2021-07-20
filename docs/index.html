@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-21 Wed 00:23 -->
+<!-- 2021-07-21 Wed 00:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yash Honda PDF (<code>yhpdf</code>) Manual</title>
@@ -275,31 +275,31 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org34bc5a2">1. Installation</a>
+<li><a href="#orgd879a19">1. Installation</a>
 <ul>
-<li><a href="#orgcd16a67">1.1. Basic</a></li>
-<li><a href="#orga392925">1.2. Advanced</a></li>
+<li><a href="#org66b31fa">1.1. Basic</a></li>
+<li><a href="#org45d2c3b">1.2. Advanced</a></li>
 </ul>
 </li>
-<li><a href="#org139c61f">2. Usage</a></li>
-<li><a href="#orgf64ab75">3. Technical Description</a>
+<li><a href="#orgc9290d2">2. Usage</a></li>
+<li><a href="#orgcc0a77e">3. Technical Description</a>
 <ul>
-<li><a href="#orgafe529e">3.1. What?</a></li>
-<li><a href="#org6197cae">3.2. How?</a></li>
-<li><a href="#orgfe82fb1">3.3. Known Issues</a></li>
+<li><a href="#orgee5c62f">3.1. What?</a></li>
+<li><a href="#orgdcad1e8">3.2. How?</a></li>
+<li><a href="#orge476f5a">3.3. Known Issues</a></li>
 </ul>
 </li>
-<li><a href="#orgae5b1bb">4. <code>yhpdf.py</code> Source</a></li>
+<li><a href="#org7ae5500">4. <code>yhpdf.py</code> Source</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org34bc5a2" class="outline-2">
-<h2 id="org34bc5a2"><span class="section-number-2">1</span> Installation</h2>
+<div id="outline-container-orgd879a19" class="outline-2">
+<h2 id="orgd879a19"><span class="section-number-2">1</span> Installation</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgcd16a67" class="outline-3">
-<h3 id="orgcd16a67"><span class="section-number-3">1.1</span> Basic</h3>
+<div id="outline-container-org66b31fa" class="outline-3">
+<h3 id="org66b31fa"><span class="section-number-3">1.1</span> Basic</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Use MS Windows 10.
@@ -319,8 +319,8 @@ is installed.</li>
 <li>Get <b>yhpdf</b>:
 <ol class="org-ol">
 <li>Download <code>yhpdf.exe</code> from
-<span class="underline"><a href="https://nebhrajani-a.github.io/yhpdf/yhpdf.exe">https://nebhrajani-a.github.io/yhpdf/yhpdf.exe</a></span>. Your
-browser may call it &ldquo;Dangerous&rdquo; since it&rsquo;s not a
+<span class="underline"><a href="https://github.com/nebhrajani-a/yhpdf/blob/master/yhpdf.exe">https://github.com/nebhrajani-a/yhpdf/blob/master/yhpdf.exe</a></span>.
+Your browser may call it &ldquo;Dangerous&rdquo; since it&rsquo;s not a
 Microsoft-verified program. Click the arrow for options and
 select &ldquo;Keep&rdquo;.</li>
 <li>Copy <code>yhpdf</code> from your <code>Downloads</code> folder and paste it in
@@ -348,8 +348,8 @@ can&rsquo;t resolve, report it to the package maintainer.</li>
 </div>
 </div>
 
-<div id="outline-container-orga392925" class="outline-3">
-<h3 id="orga392925"><span class="section-number-3">1.2</span> Advanced</h3>
+<div id="outline-container-org45d2c3b" class="outline-3">
+<h3 id="org45d2c3b"><span class="section-number-3">1.2</span> Advanced</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 WIP.
@@ -358,8 +358,8 @@ WIP.
 </div>
 </div>
 
-<div id="outline-container-org139c61f" class="outline-2">
-<h2 id="org139c61f"><span class="section-number-2">2</span> Usage</h2>
+<div id="outline-container-orgc9290d2" class="outline-2">
+<h2 id="orgc9290d2"><span class="section-number-2">2</span> Usage</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Usage is intuitive:
@@ -396,12 +396,12 @@ output folder.</li>
 </div>
 
 
-<div id="outline-container-orgf64ab75" class="outline-2">
-<h2 id="orgf64ab75"><span class="section-number-2">3</span> Technical Description</h2>
+<div id="outline-container-orgcc0a77e" class="outline-2">
+<h2 id="orgcc0a77e"><span class="section-number-2">3</span> Technical Description</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgafe529e" class="outline-3">
-<h3 id="orgafe529e"><span class="section-number-3">3.1</span> What?</h3>
+<div id="outline-container-orgee5c62f" class="outline-3">
+<h3 id="orgee5c62f"><span class="section-number-3">3.1</span> What?</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 <code>yhpdf</code> is a GUI tool which:
@@ -420,8 +420,8 @@ systems may be supported on a per-case basis.
 </div>
 </div>
 
-<div id="outline-container-org6197cae" class="outline-3">
-<h3 id="org6197cae"><span class="section-number-3">3.2</span> How?</h3>
+<div id="outline-container-orgdcad1e8" class="outline-3">
+<h3 id="orgdcad1e8"><span class="section-number-3">3.2</span> How?</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 <code>yhpdf</code> uses PyPDF2 to split the PDF page-wise, then uses
@@ -441,8 +441,8 @@ environment by installing all dependencies.
 </div>
 </div>
 
-<div id="outline-container-orgfe82fb1" class="outline-3">
-<h3 id="orgfe82fb1"><span class="section-number-3">3.3</span> Known Issues</h3>
+<div id="outline-container-orge476f5a" class="outline-3">
+<h3 id="orge476f5a"><span class="section-number-3">3.3</span> Known Issues</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 <code>yhpdf</code> is a quickly written program, and will <b>not</b> win any
@@ -471,8 +471,8 @@ users <i>only</i>).
 </div>
 </div>
 
-<div id="outline-container-orgae5b1bb" class="outline-2">
-<h2 id="orgae5b1bb"><span class="section-number-2">4</span> <code>yhpdf.py</code> Source</h2>
+<div id="outline-container-org7ae5500" class="outline-2">
+<h2 id="org7ae5500"><span class="section-number-2">4</span> <code>yhpdf.py</code> Source</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #5EC4FF;">import</span> tkinter <span style="color: #5EC4FF;">as</span> tk
