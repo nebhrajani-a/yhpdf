@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-21 Wed 00:08 -->
+<!-- 2021-07-21 Wed 00:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yash Honda PDF (<code>yhpdf</code>) Manual</title>
@@ -275,31 +275,31 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org27cdda7">1. Installation</a>
+<li><a href="#org3e31aea">1. Installation</a>
 <ul>
-<li><a href="#org8c2ae5c">1.1. Basic</a></li>
-<li><a href="#org28c3b1d">1.2. Advanced</a></li>
+<li><a href="#org0e2b55d">1.1. Basic</a></li>
+<li><a href="#orgb6a2f2f">1.2. Advanced</a></li>
 </ul>
 </li>
-<li><a href="#orgd3b3adf">2. Usage</a></li>
-<li><a href="#orgd9fe64e">3. Technical Description</a>
+<li><a href="#org8c8421a">2. Usage</a></li>
+<li><a href="#org3e05f01">3. Technical Description</a>
 <ul>
-<li><a href="#orgfad0372">3.1. What?</a></li>
-<li><a href="#org970b19b">3.2. How?</a></li>
-<li><a href="#orgc804c37">3.3. Known Issues</a></li>
+<li><a href="#org7f7dc2b">3.1. What?</a></li>
+<li><a href="#orgdeac2ab">3.2. How?</a></li>
+<li><a href="#org6d90641">3.3. Known Issues</a></li>
 </ul>
 </li>
-<li><a href="#orgab53d79">4. <code>yhpdf.py</code> Source</a></li>
+<li><a href="#orga7de1a4">4. <code>yhpdf.py</code> Source</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org27cdda7" class="outline-2">
-<h2 id="org27cdda7"><span class="section-number-2">1</span> Installation</h2>
+<div id="outline-container-org3e31aea" class="outline-2">
+<h2 id="org3e31aea"><span class="section-number-2">1</span> Installation</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org8c2ae5c" class="outline-3">
-<h3 id="org8c2ae5c"><span class="section-number-3">1.1</span> Basic</h3>
+<div id="outline-container-org0e2b55d" class="outline-3">
+<h3 id="org0e2b55d"><span class="section-number-3">1.1</span> Basic</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Use MS Windows 10.
@@ -339,8 +339,8 @@ can&rsquo;t resolve, report it to the package maintainer.</li>
 </div>
 </div>
 
-<div id="outline-container-org28c3b1d" class="outline-3">
-<h3 id="org28c3b1d"><span class="section-number-3">1.2</span> Advanced</h3>
+<div id="outline-container-orgb6a2f2f" class="outline-3">
+<h3 id="orgb6a2f2f"><span class="section-number-3">1.2</span> Advanced</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 WIP.
@@ -349,8 +349,8 @@ WIP.
 </div>
 </div>
 
-<div id="outline-container-orgd3b3adf" class="outline-2">
-<h2 id="orgd3b3adf"><span class="section-number-2">2</span> Usage</h2>
+<div id="outline-container-org8c8421a" class="outline-2">
+<h2 id="org8c8421a"><span class="section-number-2">2</span> Usage</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Usage is intuitive:
@@ -373,8 +373,11 @@ new PDFs will be put.
 seconds, depending on the speed of your machine and the size of
 the input PDF.
 <ol class="org-ol">
+<li><span class="underline">Do not close <code>yhpdf</code> even if Windows says &ldquo;Not Responding&rdquo;</span>.
+Killing <code>yhpdf</code> may damage the output. Wait for it to
+complete.</li>
 <li>Once the PDF process is complete, a popup will ask you if you
-want to view the output files. Click &ldquo;Yes&rdquo; or &ldquo;No&rdquo;.</li>
+want to view the output files. Click &ldquo;Yes&rdquo;.</li>
 </ol></li>
 <li>Process as many files as you want to by selecting them and the
 output folder.</li>
@@ -384,12 +387,12 @@ output folder.</li>
 </div>
 
 
-<div id="outline-container-orgd9fe64e" class="outline-2">
-<h2 id="orgd9fe64e"><span class="section-number-2">3</span> Technical Description</h2>
+<div id="outline-container-org3e05f01" class="outline-2">
+<h2 id="org3e05f01"><span class="section-number-2">3</span> Technical Description</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgfad0372" class="outline-3">
-<h3 id="orgfad0372"><span class="section-number-3">3.1</span> What?</h3>
+<div id="outline-container-org7f7dc2b" class="outline-3">
+<h3 id="org7f7dc2b"><span class="section-number-3">3.1</span> What?</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 <code>yhpdf</code> is a GUI tool which:
@@ -408,8 +411,8 @@ systems may be supported on a per-case basis.
 </div>
 </div>
 
-<div id="outline-container-org970b19b" class="outline-3">
-<h3 id="org970b19b"><span class="section-number-3">3.2</span> How?</h3>
+<div id="outline-container-orgdeac2ab" class="outline-3">
+<h3 id="orgdeac2ab"><span class="section-number-3">3.2</span> How?</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 <code>yhpdf</code> uses PyPDF2 to split the PDF page-wise, then uses
@@ -429,8 +432,8 @@ environment by installing all dependencies.
 </div>
 </div>
 
-<div id="outline-container-orgc804c37" class="outline-3">
-<h3 id="orgc804c37"><span class="section-number-3">3.3</span> Known Issues</h3>
+<div id="outline-container-org6d90641" class="outline-3">
+<h3 id="org6d90641"><span class="section-number-3">3.3</span> Known Issues</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 <code>yhpdf</code> is a quickly written program, and will <b>not</b> win any
@@ -459,8 +462,8 @@ users <i>only</i>).
 </div>
 </div>
 
-<div id="outline-container-orgab53d79" class="outline-2">
-<h2 id="orgab53d79"><span class="section-number-2">4</span> <code>yhpdf.py</code> Source</h2>
+<div id="outline-container-orga7de1a4" class="outline-2">
+<h2 id="orga7de1a4"><span class="section-number-2">4</span> <code>yhpdf.py</code> Source</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #5EC4FF;">import</span> tkinter <span style="color: #5EC4FF;">as</span> tk

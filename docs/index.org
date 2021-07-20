@@ -80,8 +80,11 @@
   3. Click "Process PDF" to process the PDF. This can take up to 60
      seconds, depending on the speed of your machine and the size of
      the input PDF.
-     1. Once the PDF process is complete, a popup will ask you if you
-        want to view the output files. Click "Yes" or "No".
+     1. _Do not close =yhpdf= even if Windows says "Not Responding"_.
+        Killing =yhpdf= may damage the output. Wait for it to
+        complete.
+     2. Once the PDF process is complete, a popup will ask you if you
+        want to view the output files. Click "Yes".
   4. Process as many files as you want to by selecting them and the
      output folder.
   5. Click "Exit" when you're done.
