@@ -70,7 +70,9 @@
          can't resolve, report it to the package maintainer.
 
 ** Advanced
-   WIP.
+
+   On any platform, install Python 3 and Ghostscript 64-bit. Then,
+   =pip3 install pypdf2 ghostscript=. Run with =python3 yhpdf.py=.
 
 * Usage
 
@@ -118,26 +120,23 @@
 
    The GUI uses Tkinter and is cross-platform. If you're proficient in
    Python, you can probably get =yhpdf.py= running in your own
-   environment by installing all dependencies.
+   environment.
 
 ** Known Issues
    =yhpdf= is a quickly written program, and will *not* win any
    software engineering competitions. It's meant to do one very
    specific job well. Thus, it has many unhandled exceptions, an ugly
-   interface, and rather ugly code: but it works, and it works fairly
-   fast.
+   interface, and rather ugly code: but it works, and does its job.
 
    The biggest user-facing issue is the slow startup time. This is
-   unfortunately out of =yhpdf='s control, since =pyinstaller= and all
-   other Python packagers need to decompress the single =.exe= file to
-   run, which takes time, especially on Windows. Screw you, Microsoft.
-   Moreover, it includes within it an entire Python interpreter
-   so...you know how that goes.
+   unfortunately out of =yhpdf='s control, since =pyinstaller= in
+   single file mode needs to decompress the (single) =.exe= file to
+   run, which takes time, especially on Windows because of virus
+   scanning.
 
    If this bothers you, either keep it running all the time by
    auto-starting it (it uses next to no RAM and CPU while idling), or
-   get Python and install dependencies (needless to say: advanced
-   users /only/).
+   get Python and run it from the command line.
 
 * =yhpdf.py= Source
 

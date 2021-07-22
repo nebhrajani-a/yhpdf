@@ -1,4 +1,4 @@
-% Created 2021-07-21 Wed 02:17
+% Created 2021-07-22 Thu 12:07
 % Intended LaTeX compiler: xelatex
 \documentclass[9pt]{report}
 \usepackage{graphicx}
@@ -12,7 +12,6 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage[hidelinks]{hyperref}
-\usepackage[a4paper, total={6in,9in}]{geometry}
          \usepackage{booktabs}
 \usepackage{minted}
          \setminted{breaklines=true, style=default}
@@ -49,7 +48,7 @@
  pdftitle={Yash Honda PDF (\texttt{yhpdf}) Manual},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 25.2.2 (Org mode 9.3.6)},
+ pdfcreator={Emacs 27.1 (Org mode 9.4.6)},
  pdflang={English}}
 \begin{document}
 
@@ -58,10 +57,10 @@
 
 
 \chapter{Installation}
-\label{sec:org1878c22}
+\label{sec:org0507b75}
 
 \section{Basic}
-\label{sec:org83e15bd}
+\label{sec:org135f073}
 Use MS Windows 10.
 
 \begin{enumerate}
@@ -106,11 +105,13 @@ can't resolve, report it to the package maintainer.
 \end{enumerate}
 
 \section{Advanced}
-\label{sec:orgc2d988b}
-WIP.
+\label{sec:org01acafc}
+
+On any platform, install Python 3 and Ghostscript 64-bit. Then,
+\texttt{pip3 install pypdf2 ghostscript}. Run with \texttt{python3 yhpdf.py}.
 
 \chapter{Usage}
-\label{sec:org5d7d2d3}
+\label{sec:org05ef3be}
 
 Usage is intuitive:
 
@@ -143,9 +144,9 @@ want to view the output files. Click ``Yes''.
 
 
 \chapter{Technical Description}
-\label{sec:orga284b06}
+\label{sec:org7db3a22}
 \section{What?}
-\label{sec:org44cb5e8}
+\label{sec:org73dedb4}
 \texttt{yhpdf} is a GUI tool which:
 \begin{itemize}
 \item Takes an input PDF file.
@@ -158,7 +159,7 @@ support is MS Windows 10 (compiled binary provided). Other operating
 systems may be supported on a per-case basis.
 
 \section{How?}
-\label{sec:org3f31fe0}
+\label{sec:org57cdb7e}
 \texttt{yhpdf} uses PyPDF2 to split the PDF page-wise, then uses
 Ghostscript's compression on each of these pages. If the file size
 is greater than 195KB, it first tries \texttt{-dPDFSETTINGS=/ebook}. If
@@ -169,30 +170,27 @@ If this fails, it raises an error. In essence, \texttt{yhpdf} is just a
 
 The GUI uses Tkinter and is cross-platform. If you're proficient in
 Python, you can probably get \texttt{yhpdf.py} running in your own
-environment by installing all dependencies.
+environment.
 
 \section{Known Issues}
-\label{sec:org64cb7bd}
+\label{sec:org95f3f6d}
 \texttt{yhpdf} is a quickly written program, and will \textbf{not} win any
 software engineering competitions. It's meant to do one very
 specific job well. Thus, it has many unhandled exceptions, an ugly
-interface, and rather ugly code: but it works, and it works fairly
-fast.
+interface, and rather ugly code: but it works, and does its job.
 
 The biggest user-facing issue is the slow startup time. This is
-unfortunately out of \texttt{yhpdf}'s control, since \texttt{pyinstaller} and all
-other Python packagers need to decompress the single \texttt{.exe} file to
-run, which takes time, especially on Windows. Screw you, Microsoft.
-Moreover, it includes within it an entire Python interpreter
-so\ldots{}you know how that goes.
+unfortunately out of \texttt{yhpdf}'s control, since \texttt{pyinstaller} in
+single file mode needs to decompress the (single) \texttt{.exe} file to
+run, which takes time, especially on Windows because of virus
+scanning.
 
 If this bothers you, either keep it running all the time by
 auto-starting it (it uses next to no RAM and CPU while idling), or
-get Python and install dependencies (needless to say: advanced
-users \emph{only}).
+get Python and run it from the command line.
 
 \chapter{\texttt{yhpdf.py} Source}
-\label{sec:org45cd4e5}
+\label{sec:org513c897}
 
 \begin{minted}[]{python}
 import tkinter as tk

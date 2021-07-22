@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-07-21 Wed 02:17 -->
+<!-- 2021-07-22 Thu 12:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yash Honda PDF (<code>yhpdf</code>) Manual</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -200,50 +200,26 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -275,31 +251,31 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org887671f">1. Installation</a>
+<li><a href="#org13ba5d8">1. Installation</a>
 <ul>
-<li><a href="#orgab4c5ce">1.1. Basic</a></li>
-<li><a href="#org061f553">1.2. Advanced</a></li>
+<li><a href="#org1e31b83">1.1. Basic</a></li>
+<li><a href="#org447795f">1.2. Advanced</a></li>
 </ul>
 </li>
-<li><a href="#org58fc331">2. Usage</a></li>
-<li><a href="#org825ee7a">3. Technical Description</a>
+<li><a href="#org9fe9895">2. Usage</a></li>
+<li><a href="#orgc33ba7d">3. Technical Description</a>
 <ul>
-<li><a href="#org35ce7fb">3.1. What?</a></li>
-<li><a href="#orgc557200">3.2. How?</a></li>
-<li><a href="#org45a636d">3.3. Known Issues</a></li>
+<li><a href="#org6acf20d">3.1. What?</a></li>
+<li><a href="#org71a8388">3.2. How?</a></li>
+<li><a href="#orgcc6571c">3.3. Known Issues</a></li>
 </ul>
 </li>
-<li><a href="#orgf617aa8">4. <code>yhpdf.py</code> Source</a></li>
+<li><a href="#org75ecfed">4. <code>yhpdf.py</code> Source</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org887671f" class="outline-2">
-<h2 id="org887671f"><span class="section-number-2">1</span> Installation</h2>
+<div id="outline-container-org13ba5d8" class="outline-2">
+<h2 id="org13ba5d8"><span class="section-number-2">1.</span> Installation</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgab4c5ce" class="outline-3">
-<h3 id="orgab4c5ce"><span class="section-number-3">1.1</span> Basic</h3>
+<div id="outline-container-org1e31b83" class="outline-3">
+<h3 id="org1e31b83"><span class="section-number-3">1.1.</span> Basic</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Use MS Windows 10.
@@ -348,18 +324,19 @@ can&rsquo;t resolve, report it to the package maintainer.</li>
 </div>
 </div>
 
-<div id="outline-container-org061f553" class="outline-3">
-<h3 id="org061f553"><span class="section-number-3">1.2</span> Advanced</h3>
+<div id="outline-container-org447795f" class="outline-3">
+<h3 id="org447795f"><span class="section-number-3">1.2.</span> Advanced</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-WIP.
+On any platform, install Python 3 and Ghostscript 64-bit. Then,
+<code>pip3 install pypdf2 ghostscript</code>. Run with <code>python3 yhpdf.py</code>.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org58fc331" class="outline-2">
-<h2 id="org58fc331"><span class="section-number-2">2</span> Usage</h2>
+<div id="outline-container-org9fe9895" class="outline-2">
+<h2 id="org9fe9895"><span class="section-number-2">2.</span> Usage</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Usage is intuitive:
@@ -395,12 +372,12 @@ want to view the output files. Click &ldquo;Yes&rdquo;.</li>
 </div>
 
 
-<div id="outline-container-org825ee7a" class="outline-2">
-<h2 id="org825ee7a"><span class="section-number-2">3</span> Technical Description</h2>
+<div id="outline-container-orgc33ba7d" class="outline-2">
+<h2 id="orgc33ba7d"><span class="section-number-2">3.</span> Technical Description</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org35ce7fb" class="outline-3">
-<h3 id="org35ce7fb"><span class="section-number-3">3.1</span> What?</h3>
+<div id="outline-container-org6acf20d" class="outline-3">
+<h3 id="org6acf20d"><span class="section-number-3">3.1.</span> What?</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 <code>yhpdf</code> is a GUI tool which:
@@ -419,8 +396,8 @@ systems may be supported on a per-case basis.
 </div>
 </div>
 
-<div id="outline-container-orgc557200" class="outline-3">
-<h3 id="orgc557200"><span class="section-number-3">3.2</span> How?</h3>
+<div id="outline-container-org71a8388" class="outline-3">
+<h3 id="org71a8388"><span class="section-number-3">3.2.</span> How?</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 <code>yhpdf</code> uses PyPDF2 to split the PDF page-wise, then uses
@@ -435,43 +412,40 @@ If this fails, it raises an error. In essence, <code>yhpdf</code> is just a
 <p>
 The GUI uses Tkinter and is cross-platform. If you&rsquo;re proficient in
 Python, you can probably get <code>yhpdf.py</code> running in your own
-environment by installing all dependencies.
+environment.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org45a636d" class="outline-3">
-<h3 id="org45a636d"><span class="section-number-3">3.3</span> Known Issues</h3>
+<div id="outline-container-orgcc6571c" class="outline-3">
+<h3 id="orgcc6571c"><span class="section-number-3">3.3.</span> Known Issues</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 <code>yhpdf</code> is a quickly written program, and will <b>not</b> win any
 software engineering competitions. It&rsquo;s meant to do one very
 specific job well. Thus, it has many unhandled exceptions, an ugly
-interface, and rather ugly code: but it works, and it works fairly
-fast.
+interface, and rather ugly code: but it works, and does its job.
 </p>
 
 <p>
 The biggest user-facing issue is the slow startup time. This is
-unfortunately out of <code>yhpdf</code>&rsquo;s control, since <code>pyinstaller</code> and all
-other Python packagers need to decompress the single <code>.exe</code> file to
-run, which takes time, especially on Windows. Screw you, Microsoft.
-Moreover, it includes within it an entire Python interpreter
-so&#x2026;you know how that goes.
+unfortunately out of <code>yhpdf</code>&rsquo;s control, since <code>pyinstaller</code> in
+single file mode needs to decompress the (single) <code>.exe</code> file to
+run, which takes time, especially on Windows because of virus
+scanning.
 </p>
 
 <p>
 If this bothers you, either keep it running all the time by
 auto-starting it (it uses next to no RAM and CPU while idling), or
-get Python and install dependencies (needless to say: advanced
-users <i>only</i>).
+get Python and run it from the command line.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf617aa8" class="outline-2">
-<h2 id="orgf617aa8"><span class="section-number-2">4</span> <code>yhpdf.py</code> Source</h2>
+<div id="outline-container-org75ecfed" class="outline-2">
+<h2 id="org75ecfed"><span class="section-number-2">4.</span> <code>yhpdf.py</code> Source</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #5EC4FF;">import</span> tkinter <span style="color: #5EC4FF;">as</span> tk
@@ -495,7 +469,7 @@ root.geometry<span style="color: #5EC4FF;">(</span><span style="color: #539AFC;"
 <span style="color: #5EC4FF;">def</span> <span style="color: #33CED8;">split_and_compress</span><span style="color: #5EC4FF;">()</span>:
 <span style="background-color: #181E24;"> </span>   <span style="color: #5EC4FF;">try</span>:
 <span style="background-color: #181E24;"> </span>   <span style="background-color: #181E24;"> </span>   <span style="color: #718CA1;">inputpdf</span> = PdfFileReader<span style="color: #5EC4FF;">(</span><span style="color: #5EC4FF;">open</span><span style="color: #E27E8D;">(</span><span style="color: #5EC4FF;">str</span><span style="color: #8BD49C;">(</span>list_of_vals<span style="color: #D98E48;">[</span><span style="color: #539AFC;">'filename'</span><span style="color: #D98E48;">]</span><span style="color: #8BD49C;">)</span>, <span style="color: #539AFC;">"rb"</span><span style="color: #E27E8D;">)</span><span style="color: #5EC4FF;">)</span>
-<span style="background-color: #181E24;"> </span>   <span style="color: #5EC4FF;">except</span> FileNotFoundError:
+<span style="background-color: #181E24;"> </span>   <span style="color: #5EC4FF;">except</span> <span style="color: #EBBF83;">FileNotFoundError</span>:
 <span style="background-color: #181E24;"> </span>   <span style="background-color: #181E24;"> </span>   showerror<span style="color: #5EC4FF;">(</span>title=<span style="color: #539AFC;">'Error'</span>, message=<span style="color: #539AFC;">"File not found!"</span><span style="color: #5EC4FF;">)</span>
 
 <span style="background-color: #181E24;"> </span>   <span style="color: #718CA1;">size_limit</span> = 197500
@@ -574,7 +548,7 @@ root.mainloop<span style="color: #5EC4FF;">()</span>
 </div>
 </div>
 <div id="postamble" class="status">
-<hr><p style="font-size: 75%">Created in GNU <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="https://orgmode.org">Org</a> mode 9.3.6).</p>
+<hr><p style="font-size: 75%">Created in GNU <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4.6).</p>
 </div>
 </body>
 </html>
