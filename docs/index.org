@@ -37,8 +37,8 @@
    Use MS Windows 10.
 
    1. Install *Ghostscript (64-bit)*:
-      A. Go to _[[https://www.ghostscript.com/download/gsdnld.html]]_.
-      B. Download the file *Ghostscript 9.54.0 for Windows (64 bit)* with
+      A. Go to _[[https://ghostscript.com/releases/gsdnld.html]]_.
+      B. Download the file *Ghostscript for Windows (64 bit)* with
          the AGPL license. _Do not use the 32 bit
          version, it is incompatible with =yhpdf=._
       C. Run the installer with the standard steps, and click =Finish=
