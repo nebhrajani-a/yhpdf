@@ -39,13 +39,11 @@ def split_and_compress():
         with open("%s/doc-page%s.pdf" % (list_of_vals['dir'] , i), "wb") as outputStream:
             output.write(outputStream)
         if (size_limit - int(os.stat("%s/doc-page%s.pdf" % (list_of_vals['dir'], i)).st_size)) < 0:
-            args = """-dCompatibilityLevel=1.4 -dNOPAUSE -dBATCH -dQUIET -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -sOutputFile=%s/document-page%s.pdf %s/doc-page%s.pdf""" % (list_of_vals['dir'], i, list_of_vals['dir'], i)
-            args = args.split()
+            args = ["-dCompatibilityLevel=1.4", "-dNOPAUSE", "-dBATCH", "-dQUIET", "-sDEVICE=pdfwrite", "-dPDFSETTINGS=/ebook", f"-sOutputFile={list_of_vals['dir']}/document-page{i}.pdf", f"{list_of_vals['dir']}/doc-page{i}.pdf"]
             ghostscript.Ghostscript(*args)
             os.replace("%s/document-page%s.pdf" % (list_of_vals['dir'], i), "%s/doc-page%s.pdf" % (list_of_vals['dir'], i))
         if (size_limit - int(os.stat("%s/doc-page%s.pdf" % (list_of_vals['dir'], i)).st_size)) < 0:
-            args = """-dCompatibilityLevel=1.4 -dNOPAUSE -dBATCH -dQUIET -sDEVICE=pdfwrite -dPDFSETTINGS=/screen -sOutputFile=%s/document-page%s.pdf %s/doc-page%s.pdf""" % (list_of_vals['dir'], i, list_of_vals['dir'], i)
-            args = args.split()
+            args = ["-dCompatibilityLevel=1.4", "-dNOPAUSE", "-dBATCH", "-dQUIET", "-sDEVICE=pdfwrite", "-dPDFSETTINGS=/screen", f"-sOutputFile={list_of_vals['dir']}/document-page{i}.pdf", f"{list_of_vals['dir']}/doc-page{i}.pdf"]
             ghostscript.Ghostscript(*args)
             os.replace("%s/document-page%s.pdf" % (list_of_vals['dir'], i), "%s/doc-page%s.pdf" % (list_of_vals['dir'], i))
         if (size_limit - int(os.stat("%s/doc-page%s.pdf" % (list_of_vals['dir'], i)).st_size)) < 0:
