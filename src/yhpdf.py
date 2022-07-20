@@ -1,3 +1,5 @@
+# pylint: disable=global-variable-not-assigned, consider-using-with
+
 """
 Provides yhpdf.py, standalone GUI application to process PNQ RTO PDFs.
 """
