@@ -1,3 +1,5 @@
+# pylint: disable=import-error, wrong-import-position, invalid-name
+'''Tests for yhpdf.py'''
 import sys
 import os
 import re
@@ -7,6 +9,7 @@ import yhpdf as yh
 
 
 def test_split_and_compress(tmp_path):
+    '''Test splitting and compression'''
     myinfo = yh.PDFInfo([])
     path = os.path.abspath('./tests/sample_pdfs')
     for i, pdf in enumerate(
