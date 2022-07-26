@@ -1,4 +1,4 @@
-name: Test on Windows
+name: Release Windows Binary
 
 on: [push]
 
@@ -6,22 +6,27 @@ jobs:
   build:
 
     runs-on: windows-latest
-    strategy:
-      matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+    python-version: "3.10"
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.10"
       - name: Install dependencies
         run: |
-          # sudo apt install libgs-dev
           python -m pip install --upgrade pip
-          pip install pylint
+          pip install pyinstaller
           pip install -r requirements.txt
-      - name: Test with pytest
+      - name: Build
         run: |
-          pylint $(git ls-files '*.py')
+          pyinstaller -F -w src/yhpdf.py
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          title: "Bleeding edge release"
+          files: |
+            dist/yhpdf.exe
