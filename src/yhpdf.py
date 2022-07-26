@@ -71,7 +71,7 @@ def split_and_compress(info: PDFInfo, gui: bool):
     def report_err(i: int):
         showerror(
             title='Error',
-            message=f"ERROR: I couldn't compress page {i+1} to less"
+            message=f"ERROR: I couldn't compress page {i+1} to less "
             "than 195KB. Consider using an online compressor or re-scanning.")
 
     err_dict = {}
