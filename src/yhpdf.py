@@ -74,13 +74,17 @@ def split_and_compress(info: PDFInfo, gui: bool):
             message=f"ERROR: I couldn't compress page {i+1} to less"
             "than 195KB. Consider using an online compressor or re-scanning.")
 
+    err_dict = {}
+
     if gui:
         info.boxes[2]['text'] = ""
 
     try:
         inputpdf = PdfFileReader(open(str(info.filename), "rb"))
     except FileNotFoundError:
-        showerror(title='Error', message="File not found!")
+        if gui:
+            showerror(title='Error', message="File not found!")
+        return
 
     for i in range(inputpdf.numPages):
         output = PdfFileWriter()
@@ -88,6 +92,7 @@ def split_and_compress(info: PDFInfo, gui: bool):
 
         with open(f"{info.directory}/doc-page{i}.pdf", "wb") as ostr:
             output.write(ostr)
+
 
         if page_too_large(i):
             call_gs("ebook", i)
@@ -98,10 +103,14 @@ def split_and_compress(info: PDFInfo, gui: bool):
         if page_too_large(i):
             if gui:
                 report_err(i)
+            else:
+                err_dict[i] = True
 
     if gui:
         info.boxes[2][
             'text'] = f"Successfully split and compressed to {i} pages"
+    else:
+        return err_dict
 
 
 def main():
