@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-07-21 Thu 15:57 -->
+<!-- 2022-07-27 Wed 02:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yash Honda PDF (=yhpdf=) Manual</title>
@@ -44,31 +44,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf6f81df">1. Installation</a>
+<li><a href="#orgd611a48">1. Installation</a>
 <ul>
-<li><a href="#orgc3c0332">1.1. Basic</a></li>
-<li><a href="#orgc4c1d86">1.2. Advanced</a></li>
+<li><a href="#org95f5924">1.1. Basic</a></li>
+<li><a href="#org11d8eae">1.2. Advanced</a></li>
 </ul>
 </li>
-<li><a href="#orgb9c8997">2. Usage</a></li>
-<li><a href="#org8f767ba">3. Technical Description</a>
+<li><a href="#orgc8dc47d">2. Usage</a></li>
+<li><a href="#org184ba7f">3. Technical Description</a>
 <ul>
-<li><a href="#org3cab299">3.1. What?</a></li>
-<li><a href="#org597ef8a">3.2. How?</a></li>
-<li><a href="#org38cea13">3.3. Known Issues</a></li>
+<li><a href="#orgd3cfefa">3.1. What?</a></li>
+<li><a href="#org9408845">3.2. How?</a></li>
+<li><a href="#org2186e05">3.3. Known Issues</a></li>
 </ul>
 </li>
-<li><a href="#org4b74d66">4. <code>yhpdf.py</code> Source</a></li>
+<li><a href="#orgc10856b">4. <code>yhpdf.py</code> Source</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf6f81df" class="outline-2">
-<h2 id="orgf6f81df"><span class="section-number-2">1.</span> Installation</h2>
+<div id="outline-container-orgd611a48" class="outline-2">
+<h2 id="orgd611a48"><span class="section-number-2">1.</span> Installation</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgc3c0332" class="outline-3">
-<h3 id="orgc3c0332"><span class="section-number-3">1.1.</span> Basic</h3>
+<div id="outline-container-org95f5924" class="outline-3">
+<h3 id="org95f5924"><span class="section-number-3">1.1.</span> Basic</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Use MS Windows 10.
@@ -88,8 +88,8 @@ is installed.</li>
 <li>Get <b>yhpdf</b>:
 <ol class="org-ol">
 <li>Download <code>yhpdf.exe</code> from
-<span class="underline"><a href="https://nebhrajani-a.github.io/yhpdf/yhpdf.exe">https://nebhrajani-a.github.io/yhpdf/yhpdf.exe</a></span>. Your
-browser may call it &ldquo;Dangerous&rdquo; since it&rsquo;s not a
+<span class="underline"><a href="https://github.com/nebhrajani-a/yhpdf/releases/download/v1.4/yhpdf.exe">https://github.com/nebhrajani-a/yhpdf/releases/download/v1.4/yhpdf.exe</a></span>.
+Your browser may call it &ldquo;Dangerous&rdquo; since it&rsquo;s not a
 Microsoft-verified program. Click the arrow for options and
 select &ldquo;Keep&rdquo;.</li>
 <li>Copy <code>yhpdf</code> from your <code>Downloads</code> folder and paste it in
@@ -117,8 +117,8 @@ can&rsquo;t resolve, report it to the package maintainer.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc4c1d86" class="outline-3">
-<h3 id="orgc4c1d86"><span class="section-number-3">1.2.</span> Advanced</h3>
+<div id="outline-container-org11d8eae" class="outline-3">
+<h3 id="org11d8eae"><span class="section-number-3">1.2.</span> Advanced</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 On any platform, install Python 3 and Ghostscript 64-bit. Then,
@@ -128,8 +128,8 @@ On any platform, install Python 3 and Ghostscript 64-bit. Then,
 </div>
 </div>
 
-<div id="outline-container-orgb9c8997" class="outline-2">
-<h2 id="orgb9c8997"><span class="section-number-2">2.</span> Usage</h2>
+<div id="outline-container-orgc8dc47d" class="outline-2">
+<h2 id="orgc8dc47d"><span class="section-number-2">2.</span> Usage</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Usage is intuitive:
@@ -165,12 +165,12 @@ want to view the output files. Click &ldquo;Yes&rdquo;.</li>
 </div>
 
 
-<div id="outline-container-org8f767ba" class="outline-2">
-<h2 id="org8f767ba"><span class="section-number-2">3.</span> Technical Description</h2>
+<div id="outline-container-org184ba7f" class="outline-2">
+<h2 id="org184ba7f"><span class="section-number-2">3.</span> Technical Description</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org3cab299" class="outline-3">
-<h3 id="org3cab299"><span class="section-number-3">3.1.</span> What?</h3>
+<div id="outline-container-orgd3cfefa" class="outline-3">
+<h3 id="orgd3cfefa"><span class="section-number-3">3.1.</span> What?</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 <code>yhpdf</code> is a GUI tool which:
@@ -183,14 +183,14 @@ want to view the output files. Click &ldquo;Yes&rdquo;.</li>
 
 <p>
 Given the intended use-case, the only platform with first-class
-support is MS Windows 10 (compiled binary provided). Other operating
-systems may be supported on a per-case basis.
+support is MS Windows 10 (compiled binary provided). None of the
+Python is OS-specific though, and the CI tests run on Ubuntu.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org597ef8a" class="outline-3">
-<h3 id="org597ef8a"><span class="section-number-3">3.2.</span> How?</h3>
+<div id="outline-container-org9408845" class="outline-3">
+<h3 id="org9408845"><span class="section-number-3">3.2.</span> How?</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 <code>yhpdf</code> uses PyPDF2 to split the PDF page-wise, then uses
@@ -210,16 +210,9 @@ environment.
 </div>
 </div>
 
-<div id="outline-container-org38cea13" class="outline-3">
-<h3 id="org38cea13"><span class="section-number-3">3.3.</span> Known Issues</h3>
+<div id="outline-container-org2186e05" class="outline-3">
+<h3 id="org2186e05"><span class="section-number-3">3.3.</span> Known Issues</h3>
 <div class="outline-text-3" id="text-3-3">
-<p>
-<code>yhpdf</code> is a quickly written program, and will <b>not</b> win any
-software engineering competitions. It&rsquo;s meant to do one very
-specific job well. Thus, it has many unhandled exceptions, an ugly
-interface, and rather ugly code: but it works, and does its job.
-</p>
-
 <p>
 The biggest user-facing issue is the slow startup time. This is
 unfortunately out of <code>yhpdf</code>&rsquo;s control, since <code>pyinstaller</code> in
@@ -237,150 +230,12 @@ get Python and run it from the command line.
 </div>
 </div>
 
-<div id="outline-container-org4b74d66" class="outline-2">
-<h2 id="org4b74d66"><span class="section-number-2">4.</span> <code>yhpdf.py</code> Source</h2>
+<div id="outline-container-orgc10856b" class="outline-2">
+<h2 id="orgc10856b"><span class="section-number-2">4.</span> <code>yhpdf.py</code> Source</h2>
 <div class="outline-text-2" id="text-4">
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #a52a2a; font-style: italic;"># </span><span style="color: #a52a2a; font-style: italic;">pylint: disable=global-variable-not-assigned, consider-using-with</span>
-
-<span style="color: #84888b; font-style: italic;">"""</span>
-<span style="color: #84888b; font-style: italic;">Provides yhpdf.py, standalone GUI application to process PNQ RTO PDFs.</span>
-<span style="color: #84888b; font-style: italic;">"""</span>
-
-<span style="color: #e45649;">import</span> tkinter <span style="color: #e45649;">as</span> tk
-<span style="color: #e45649;">from</span> tkinter <span style="color: #e45649;">import</span> ttk
-<span style="color: #e45649;">from</span> tkinter <span style="color: #e45649;">import</span> filedialog <span style="color: #e45649;">as</span> fd
-<span style="color: #e45649;">from</span> tkinter.messagebox <span style="color: #e45649;">import</span> showerror
-<span style="color: #e45649;">import</span> sys
-<span style="color: #e45649;">import</span> os
-<span style="color: #e45649;">from</span> pathlib <span style="color: #e45649;">import</span> Path
-<span style="color: #e45649;">import</span> ghostscript
-<span style="color: #e45649;">from</span> PyPDF2 <span style="color: #e45649;">import</span> PdfFileWriter, PdfFileReader
-
-
-<span style="color: #e45649;">def</span> <span style="color: #a626a4;">clear_widget_text</span><span style="color: #4078f2;">(</span>widget<span style="color: #4078f2;">)</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="color: #84888b; font-style: italic;">"""Clear widget text"""</span>
-<span style="background-color: #ffffff;"> </span>   <span style="color: #6a1868;">widget</span><span style="color: #4078f2;">[</span><span style="color: #50a14f;">'text'</span><span style="color: #4078f2;">]</span> = <span style="color: #50a14f;">""</span>
-
-
-<span style="color: #6a1868;">root</span> = tk.Tk<span style="color: #4078f2;">()</span>
-root.title<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"[Yash Honda] PDF Splitter/Compressor"</span><span style="color: #4078f2;">)</span>
-root.geometry<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'1000x500'</span><span style="color: #4078f2;">)</span>
-
-<span style="color: #6a1868;">INFO1</span>, <span style="color: #6a1868;">INFO2</span>, <span style="color: #6a1868;">INFO3</span> = ttk.Label<span style="color: #4078f2;">(</span>root<span style="color: #4078f2;">)</span>, ttk.Label<span style="color: #4078f2;">(</span>root<span style="color: #4078f2;">)</span>, ttk.Label<span style="color: #4078f2;">(</span>root,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span> font=<span style="color: #a626a4;">(</span>20<span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
-INFO1.grid<span style="color: #4078f2;">(</span>row=1, column=1, padx=10, pady=30<span style="color: #4078f2;">)</span>
-INFO2.grid<span style="color: #4078f2;">(</span>row=2, column=1, padx=10, pady=30<span style="color: #4078f2;">)</span>
-INFO3.grid<span style="color: #4078f2;">(</span>row=3, column=1, padx=10, pady=30<span style="color: #4078f2;">)</span>
-list_of_vals = <span style="color: #4078f2;">{</span><span style="color: #50a14f;">'filename'</span>: <span style="color: #b751b6;">False</span>, <span style="color: #50a14f;">'dir'</span>: <span style="color: #b751b6;">False</span><span style="color: #4078f2;">}</span>
-
-
-<span style="color: #e45649;">def</span> <span style="color: #a626a4;">split_and_compress</span><span style="color: #4078f2;">()</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="color: #84888b; font-style: italic;">"""Split and compress the actual PDF"""</span>
-<span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">global</span> INFO3
-<span style="background-color: #ffffff;"> </span>   clear_widget_text<span style="color: #4078f2;">(</span>INFO3<span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">try</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   inputpdf = PdfFileReader<span style="color: #4078f2;">(</span><span style="color: #a626a4;">open</span><span style="color: #a626a4;">(</span><span style="color: #a626a4;">str</span><span style="color: #50a14f;">(</span>list_of_vals<span style="color: #b751b6;">[</span><span style="color: #50a14f;">'filename'</span><span style="color: #b751b6;">]</span><span style="color: #50a14f;">)</span>, <span style="color: #50a14f;">"rb"</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">except</span> <span style="color: #986801;">FileNotFoundError</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   showerror<span style="color: #4078f2;">(</span>title=<span style="color: #50a14f;">'Error'</span>, message=<span style="color: #50a14f;">"File not found!"</span><span style="color: #4078f2;">)</span>
-
-<span style="background-color: #ffffff;"> </span>   size_limit = 197500
-<span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">for</span> i <span style="color: #e45649;">in</span> <span style="color: #a626a4;">range</span><span style="color: #4078f2;">(</span>inputpdf.numPages<span style="color: #4078f2;">)</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   output = PdfFileWriter<span style="color: #4078f2;">()</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   output.addPage<span style="color: #4078f2;">(</span>inputpdf.getPage<span style="color: #a626a4;">(</span>i<span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">with</span> <span style="color: #a626a4;">open</span><span style="color: #4078f2;">(</span>f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/doc-page</span>{i}<span style="color: #50a14f;">.pdf"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span> <span style="color: #50a14f;">"wb"</span><span style="color: #4078f2;">)</span> <span style="color: #e45649;">as</span> output_stream:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   output.write<span style="color: #4078f2;">(</span>output_stream<span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>size_limit -
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #a626a4;">int</span><span style="color: #a626a4;">(</span>os.stat<span style="color: #50a14f;">(</span>f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/doc-page</span>{i}<span style="color: #50a14f;">.pdf"</span><span style="color: #50a14f;">)</span>.st_size<span style="color: #a626a4;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #4078f2;">)</span> &lt; 0:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   args = <span style="color: #4078f2;">[</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #50a14f;">"-dCompatibilityLevel=1.4"</span>, <span style="color: #50a14f;">"-dNOPAUSE"</span>, <span style="color: #50a14f;">"-dBATCH"</span>, <span style="color: #50a14f;">"-dQUIET"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #50a14f;">"-sDEVICE=pdfwrite"</span>, <span style="color: #50a14f;">"-dPDFSETTINGS=/ebook"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   f<span style="color: #50a14f;">"-sOutputFile=</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/document-page</span>{i}<span style="color: #50a14f;">.pdf"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/doc-page</span>{i}<span style="color: #50a14f;">.pdf"</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #4078f2;">]</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   ghostscript.Ghostscript<span style="color: #4078f2;">(</span>*args<span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   os.replace<span style="color: #4078f2;">(</span>f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/document-page</span>{i}<span style="color: #50a14f;">.pdf"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>  f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/doc-page</span>{i}<span style="color: #50a14f;">.pdf"</span><span style="color: #4078f2;">)</span>
-
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>size_limit -
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #a626a4;">int</span><span style="color: #a626a4;">(</span>os.stat<span style="color: #50a14f;">(</span>f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/doc-page</span>{i}<span style="color: #50a14f;">.pdf"</span><span style="color: #50a14f;">)</span>.st_size<span style="color: #a626a4;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #4078f2;">)</span> &lt; 0:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   args = <span style="color: #4078f2;">[</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #50a14f;">"-dCompatibilityLevel=1.4"</span>, <span style="color: #50a14f;">"-dNOPAUSE"</span>, <span style="color: #50a14f;">"-dBATCH"</span>, <span style="color: #50a14f;">"-dQUIET"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #50a14f;">"-sDEVICE=pdfwrite"</span>, <span style="color: #50a14f;">"-dPDFSETTINGS=/screen"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   f<span style="color: #50a14f;">"-sOutputFile=</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/document-page</span>{i}<span style="color: #50a14f;">.pdf"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/doc-page</span>{i}<span style="color: #50a14f;">.pdf"</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #4078f2;">]</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   ghostscript.Ghostscript<span style="color: #4078f2;">(</span>*args<span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   os.replace<span style="color: #4078f2;">(</span>f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/document-page</span>{i}<span style="color: #50a14f;">.pdf"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>  f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/doc-page</span>{i}<span style="color: #50a14f;">.pdf"</span><span style="color: #4078f2;">)</span>
-
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>size_limit -
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #a626a4;">int</span><span style="color: #a626a4;">(</span>os.stat<span style="color: #50a14f;">(</span>f<span style="color: #50a14f;">"</span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">/doc-page</span>{i}<span style="color: #50a14f;">.pdf"</span><span style="color: #50a14f;">)</span>.st_size<span style="color: #a626a4;">)</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="color: #4078f2;">)</span> &lt; 0:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   showerror<span style="color: #4078f2;">(</span>
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   title=<span style="color: #50a14f;">'Error'</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   message=f<span style="color: #50a14f;">"ERROR: I couldn't compress page </span>{i+1}<span style="color: #50a14f;"> to less than 195KB. \</span>
-<span style="color: #50a14f; background-color: #ffffff;"> </span><span style="color: #50a14f;">   </span><span style="color: #50a14f; background-color: #ffffff;"> </span><span style="color: #50a14f;">   </span><span style="color: #50a14f; background-color: #ffffff;"> </span><span style="color: #50a14f;">   </span><span style="color: #50a14f; background-color: #ffffff;"> </span><span style="color: #50a14f;">   Consider using an online compressor or re-scanning."</span><span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   clear_widget_text<span style="color: #4078f2;">(</span>INFO3<span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   INFO3<span style="color: #4078f2;">[</span><span style="color: #50a14f;">'text'</span><span style="color: #4078f2;">]</span> = f<span style="color: #50a14f;">"Successfully split and compressed to </span>{i}<span style="color: #50a14f;"> pages"</span>
-
-
-<span style="color: #e45649;">def</span> <span style="color: #a626a4;">select_file</span><span style="color: #4078f2;">()</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="color: #84888b; font-style: italic;">"""Interface for file selection"""</span>
-<span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">global</span> INFO1
-<span style="background-color: #ffffff;"> </span>   clear_widget_text<span style="color: #4078f2;">(</span>INFO1<span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   filetypes = <span style="color: #4078f2;">(</span><span style="color: #a626a4;">(</span><span style="color: #50a14f;">'PDF files'</span>, <span style="color: #50a14f;">'*.pdf'</span><span style="color: #a626a4;">)</span>, <span style="color: #a626a4;">(</span><span style="color: #50a14f;">'All files'</span>, <span style="color: #50a14f;">'*.*'</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
-
-<span style="background-color: #ffffff;"> </span>   list_of_vals<span style="color: #4078f2;">[</span><span style="color: #50a14f;">'filename'</span><span style="color: #4078f2;">]</span> = <span style="color: #4078f2;">(</span>fd.askopenfilename<span style="color: #a626a4;">(</span>title=<span style="color: #50a14f;">'Select scanned PDF'</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>  initialdir=<span style="color: #a626a4;">str</span><span style="color: #50a14f;">(</span>Path.home<span style="color: #b751b6;">()</span><span style="color: #50a14f;">)</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>  filetypes=filetypes<span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
-
-<span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">if</span> list_of_vals<span style="color: #4078f2;">[</span><span style="color: #50a14f;">'filename'</span><span style="color: #4078f2;">]</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   INFO1<span style="color: #4078f2;">[</span><span style="color: #50a14f;">'text'</span><span style="color: #4078f2;">]</span> = f<span style="color: #50a14f;">"File selected: </span>{list_of_vals['filename']}<span style="color: #50a14f;">"</span>
-
-
-<span style="color: #e45649;">def</span> <span style="color: #a626a4;">select_directory</span><span style="color: #4078f2;">()</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="color: #84888b; font-style: italic;">"""Interface for directory selection"""</span>
-<span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">global</span> INFO2
-<span style="background-color: #ffffff;"> </span>   clear_widget_text<span style="color: #4078f2;">(</span>INFO2<span style="color: #4078f2;">)</span>
-<span style="background-color: #ffffff;"> </span>   list_of_vals<span style="color: #4078f2;">[</span><span style="color: #50a14f;">'dir'</span><span style="color: #4078f2;">]</span> = fd.askdirectory<span style="color: #4078f2;">(</span>title=<span style="color: #50a14f;">'Select output folder'</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span> initialdir=<span style="color: #a626a4;">str</span><span style="color: #a626a4;">(</span>Path.home<span style="color: #50a14f;">()</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
-
-<span style="background-color: #ffffff;"> </span>   <span style="color: #e45649;">if</span> list_of_vals<span style="color: #4078f2;">[</span><span style="color: #50a14f;">'dir'</span><span style="color: #4078f2;">]</span>:
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   INFO2<span style="color: #4078f2;">[</span><span style="color: #50a14f;">'text'</span><span style="color: #4078f2;">]</span> = f<span style="color: #50a14f;">"Folder selected: </span>{list_of_vals['<span style="color: #a626a4;">dir</span>']}<span style="color: #50a14f;">"</span>
-
-
-text = ttk.Label<span style="color: #4078f2;">(</span>
-<span style="background-color: #ffffff;"> </span>   root,
-<span style="background-color: #ffffff;"> </span>   text=
-<span style="background-color: #ffffff;"> </span>   <span style="color: #50a14f;">"This is an internal program. You may not copy, distribute, or sell it."</span><span style="color: #4078f2;">)</span>
-text.grid<span style="color: #4078f2;">(</span>row=0, column=0, padx=10, pady=30<span style="color: #4078f2;">)</span>
-
-open_button = ttk.Button<span style="color: #4078f2;">(</span>root, text=<span style="color: #50a14f;">'Select a file'</span>, command=select_file<span style="color: #4078f2;">)</span>
-open_button.grid<span style="color: #4078f2;">(</span>row=1, column=0, padx=10, pady=30<span style="color: #4078f2;">)</span>
-
-dir_button = ttk.Button<span style="color: #4078f2;">(</span>root,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   text=<span style="color: #50a14f;">"Select output folder"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   command=select_directory<span style="color: #4078f2;">)</span>
-dir_button.grid<span style="color: #4078f2;">(</span>row=2, column=0, padx=10, pady=30<span style="color: #4078f2;">)</span>
-
-process_button = ttk.Button<span style="color: #4078f2;">(</span>root,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   text=<span style="color: #50a14f;">"Process PDF"</span>,
-<span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   <span style="background-color: #ffffff;"> </span>   command=split_and_compress<span style="color: #4078f2;">)</span>
-process_button.grid<span style="color: #4078f2;">(</span>row=3, column=0, padx=10, pady=30<span style="color: #4078f2;">)</span>
-
-exit_button = ttk.Button<span style="color: #4078f2;">(</span>root, text=<span style="color: #50a14f;">"Exit"</span>, command=sys.<span style="color: #b751b6;">exit</span><span style="color: #4078f2;">)</span>
-exit_button.grid<span style="color: #4078f2;">(</span>row=4, column=0, padx=10, pady=30<span style="color: #4078f2;">)</span>
-
-text2 = ttk.Label<span style="color: #4078f2;">(</span>root, text=<span style="color: #50a14f;">"All rights reserved.\n(C) Yash Honda 2021"</span><span style="color: #4078f2;">)</span>
-text2.grid<span style="color: #4078f2;">(</span>row=5, column=0, padx=10, pady=30<span style="color: #4078f2;">)</span>
-
-root.mainloop<span style="color: #4078f2;">()</span>
-</pre>
-</div>
+<p>
+<a href="https://github.com/nebhrajani-a/yhpdf">https://github.com/nebhrajani-a/yhpdf</a>
+</p>
 </div>
 </div>
 </div>

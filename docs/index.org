@@ -46,8 +46,8 @@
          is installed.
    2. Get *yhpdf*:
       A. Download =yhpdf.exe= from
-         _[[https://nebhrajani-a.github.io/yhpdf/yhpdf.exe]]_. Your
-         browser may call it "Dangerous" since it's not a
+         _https://github.com/nebhrajani-a/yhpdf/releases/download/v1.4/yhpdf.exe_.
+         Your browser may call it "Dangerous" since it's not a
          Microsoft-verified program. Click the arrow for options and
          select "Keep".
       B. Copy =yhpdf= from your =Downloads= folder and paste it in
@@ -106,8 +106,8 @@
    - Compresses each page PDF to less than 195KB.
 
    Given the intended use-case, the only platform with first-class
-   support is MS Windows 10 (compiled binary provided). Other operating
-   systems may be supported on a per-case basis.
+   support is MS Windows 10 (compiled binary provided). None of the
+   Python is OS-specific though, and the CI tests run on Ubuntu.
 
 ** How?
    =yhpdf= uses PyPDF2 to split the PDF page-wise, then uses
@@ -123,11 +123,6 @@
    environment.
 
 ** Known Issues
-   =yhpdf= is a quickly written program, and will *not* win any
-   software engineering competitions. It's meant to do one very
-   specific job well. Thus, it has many unhandled exceptions, an ugly
-   interface, and rather ugly code: but it works, and does its job.
-
    The biggest user-facing issue is the slow startup time. This is
    unfortunately out of =yhpdf='s control, since =pyinstaller= in
    single file mode needs to decompress the (single) =.exe= file to
@@ -139,4 +134,4 @@
    get Python and run it from the command line.
 
 * =yhpdf.py= Source
-#+include: ../src/yhpdf.py src python
+https://github.com/nebhrajani-a/yhpdf
