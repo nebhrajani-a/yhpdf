@@ -84,7 +84,7 @@ def split_and_compress(info: PDFInfo, gui: bool):
     except FileNotFoundError:
         if gui:
             showerror(title='Error', message="File not found!")
-        return
+        return None
 
     for i in range(inputpdf.numPages):
         output = PdfFileWriter()
