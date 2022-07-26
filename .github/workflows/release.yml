@@ -1,10 +1,13 @@
 name: Release Windows Binary
 
-on: [push]
+on:
+  push:
+    tags:
+      - "v*"
 
 jobs:
-  build:
-
+  tagged-release:
+    name: "Tagged release"
     runs-on: windows-latest
     strategy:
       matrix:
@@ -28,7 +31,6 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          title: "Bleeding edge release"
+          prerelease: false
           files: |
             dist/yhpdf.exe
