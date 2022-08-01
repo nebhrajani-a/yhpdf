@@ -1,7 +1,7 @@
 # pylint: disable=consider-using-with
-'''
+"""
 Provides yhpdf.py, standalone GUI application to process PNQ RTO PDFs.
-'''
+"""
 
 import tkinter as tk
 from tkinter import ttk
@@ -18,40 +18,41 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 
 @dataclass
 class PDFInfo:
-    '''
+    """
     Class that contains filename, directory for PDF to process.
     Also holds information labels.
-    '''
+    """
+
     boxes: list
     filename: str = None
     directory: str = None
 
 
 def select_file(info: PDFInfo):
-    '''Interface for file selection, setter for info.filename'''
-    info.boxes[0]['text'] = ""
-    filetypes = (('PDF files', '*.pdf'), ('All files', '*.*'))
+    """Interface for file selection, setter for info.filename"""
+    info.boxes[0]["text"] = ""
+    filetypes = (("PDF files", "*.pdf"), ("All files", "*.*"))
 
-    info.filename = (fd.askopenfilename(title='Select scanned PDF',
-                                        initialdir=str(Path.home()),
-                                        filetypes=filetypes))
+    info.filename = fd.askopenfilename(title="Select scanned PDF",
+                                       initialdir=str(Path.home()),
+                                       filetypes=filetypes)
 
     if info.filename:
-        info.boxes[0]['text'] = f"File selected: {info.filename}"
+        info.boxes[0]["text"] = f"File selected: {info.filename}"
 
 
 def select_directory(info: PDFInfo):
-    '''Interface for directory selection, setter for info.directory'''
-    info.boxes[1]['text'] = ""
-    info.directory = fd.askdirectory(title='Select output folder',
+    """Interface for directory selection, setter for info.directory"""
+    info.boxes[1]["text"] = ""
+    info.directory = fd.askdirectory(title="Select output folder",
                                      initialdir=str(Path.home()))
 
     if info.directory:
-        info.boxes[1]['text'] = f"Folder selected: {info.directory}"
+        info.boxes[1]["text"] = f"Folder selected: {info.directory}"
 
 
 def split_and_compress(info: PDFInfo, gui: bool):
-    '''Split and compress the actual PDF'''
+    """Split and compress the actual PDF"""
     def page_too_large(i: int):
         size_limit = 197500
         filesize = int(os.stat(f"{info.directory}/doc-page{i}.pdf").st_size)
@@ -59,31 +60,38 @@ def split_and_compress(info: PDFInfo, gui: bool):
 
     def call_gs(mode: str, i: int):
         args = [
-            "-dCompatibilityLevel=1.4", "-dNOPAUSE", "-dBATCH", "-dQUIET",
-            "-sDEVICE=pdfwrite", f"-dPDFSETTINGS=/{mode}",
+            "-dCompatibilityLevel=1.4",
+            "-dNOPAUSE",
+            "-dBATCH",
+            "-dQUIET",
+            "-sDEVICE=pdfwrite",
+            f"-dPDFSETTINGS=/{mode}",
             f"-sOutputFile={info.directory}/document-page{i}.pdf",
-            f"{info.directory}/doc-page{i}.pdf"
+            f"{info.directory}/doc-page{i}.pdf",
         ]
         ghostscript.Ghostscript(*args)
-        os.replace(f"{info.directory}/document-page{i}.pdf",
-                   f"{info.directory}/doc-page{i}.pdf")
+        os.replace(
+            f"{info.directory}/document-page{i}.pdf",
+            f"{info.directory}/doc-page{i}.pdf",
+        )
 
     def report_err(i: int):
         showerror(
-            title='Error',
+            title="Error",
             message=f"ERROR: I couldn't compress page {i+1} to less "
-            "than 195KB. Consider using an online compressor or re-scanning.")
+            "than 195KB. Consider using an online compressor or re-scanning.",
+        )
 
     err_dict = {}
 
     if gui:
-        info.boxes[2]['text'] = ""
+        info.boxes[2]["text"] = ""
 
     try:
         inputpdf = PdfFileReader(open(str(info.filename), "rb"))
     except FileNotFoundError:
         if gui:
-            showerror(title='Error', message="File not found!")
+            showerror(title="Error", message="File not found!")
         return None
 
     for i in range(inputpdf.numPages):
@@ -92,7 +100,6 @@ def split_and_compress(info: PDFInfo, gui: bool):
 
         with open(f"{info.directory}/doc-page{i}.pdf", "wb") as ostr:
             output.write(ostr)
-
 
         if page_too_large(i):
             call_gs("ebook", i)
@@ -108,16 +115,16 @@ def split_and_compress(info: PDFInfo, gui: bool):
 
     if gui:
         info.boxes[2][
-            'text'] = f"Successfully split and compressed to {i} pages"
+            "text"] = f"Successfully split and compressed to {i} pages"
     else:
         return err_dict
 
 
 def main():
-    '''Main function'''
+    """Main function"""
     root = tk.Tk()
     root.title("[Yash Honda] PDF Splitter/Compressor")
-    root.geometry('1000x500')
+    root.geometry("1000x500")
 
     boxes = [ttk.Label(root), ttk.Label(root), ttk.Label(root, font=(20))]
     boxes[0].grid(row=1, column=1, padx=10, pady=30)
@@ -126,13 +133,15 @@ def main():
 
     info = PDFInfo(boxes)
 
-    text = ttk.Label(root,
-                     text="This is an internal program. You may not copy, "
-                     "distribute, or sell it.")
+    text = ttk.Label(
+        root,
+        text="This is an internal program. You may not copy, "
+        "distribute, or sell it.",
+    )
     text.grid(row=0, column=0, padx=10, pady=30)
 
     open_button = ttk.Button(root,
-                             text='Select a file',
+                             text="Select a file",
                              command=lambda: select_file(info))
     open_button.grid(row=1, column=0, padx=10, pady=30)
 
@@ -156,5 +165,5 @@ def main():
     root.mainloop()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
