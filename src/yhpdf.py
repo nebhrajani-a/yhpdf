@@ -22,7 +22,6 @@ class PDFInfo:
     Class that contains filename, directory for PDF to process.
     Also holds information labels.
     """
-
     boxes: list
     filename: str = None
     directory: str = None
@@ -36,7 +35,6 @@ def select_file(info: PDFInfo):
     info.filename = fd.askopenfilename(title="Select scanned PDF",
                                        initialdir=str(Path.home()),
                                        filetypes=filetypes)
-
     if info.filename:
         info.boxes[0]["text"] = f"File selected: {info.filename}"
 
@@ -46,7 +44,6 @@ def select_directory(info: PDFInfo):
     info.boxes[1]["text"] = ""
     info.directory = fd.askdirectory(title="Select output folder",
                                      initialdir=str(Path.home()))
-
     if info.directory:
         info.boxes[1]["text"] = f"Folder selected: {info.directory}"
 
@@ -83,7 +80,6 @@ def split_and_compress(info: PDFInfo, gui: bool):
         )
 
     err_dict = {}
-
     if gui:
         info.boxes[2]["text"] = ""
 
@@ -103,10 +99,8 @@ def split_and_compress(info: PDFInfo, gui: bool):
 
         if page_too_large(i):
             call_gs("ebook", i)
-
         if page_too_large(i):
             call_gs("screen", i)
-
         if page_too_large(i):
             if gui:
                 report_err(i)
